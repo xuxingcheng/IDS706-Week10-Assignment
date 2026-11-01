@@ -1,4 +1,4 @@
-"""GitHub Actions runs this against the real hosted database using Secrets."""
+"""Check the five quiz answers against the real Week 7 database."""
 import json
 from decimal import Decimal
 from pathlib import Path
