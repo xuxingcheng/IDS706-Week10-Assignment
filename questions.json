@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "title": "Affordable meals",
+    "question": "Return name and avg_cost for restaurants costing at most $12. Sort by avg_cost from lowest to highest.",
+    "points": 4,
+    "sql": "SELECT name, avg_cost FROM restaurants WHERE avg_cost <= 12 ORDER BY avg_cost;",
+    "columns": [
+      "name",
+      "avg_cost"
+    ],
+    "rows": [
+      [
+        "Campus Tacos",
+        10
+      ],
+      [
+        "Burrito House",
+        11
+      ],
+      [
+        "Pizza Corner",
+        12
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Top three ratings",
+    "question": "Return name and rating for the three highest-rated restaurants. Sort by rating from highest to lowest.",
+    "points": 4,
+    "sql": "SELECT name, rating FROM restaurants ORDER BY rating DESC LIMIT 3;",
+    "columns": [
+      "name",
+      "rating"
+    ],
+    "rows": [
+      [
+        "Sushi Spot",
+        4.8
+      ],
+      [
+        "Pasta Place",
+        4.7
+      ],
+      [
+        "Campus Tacos",
+        4.5
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Close and highly rated",
+    "question": "Return name, rating, and distance_miles for restaurants within 1.5 miles with a rating of at least 4.5. Sort by distance_miles.",
+    "points": 4,
+    "sql": "SELECT name, rating, distance_miles FROM restaurants WHERE distance_miles <= 1.5 AND rating >= 4.5 ORDER BY distance_miles;",
+    "columns": [
+      "name",
+      "rating",
+      "distance_miles"
+    ],
+    "rows": [
+      [
+        "Campus Tacos",
+        4.5,
+        0.5
+      ],
+      [
+        "Pasta Place",
+        4.7,
+        1.2
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Restaurants per cuisine",
+    "question": "Return cuisine and COUNT(*) AS restaurant_count for each cuisine. Sort by restaurant_count descending, then cuisine alphabetically.",
+    "points": 4,
+    "sql": "SELECT cuisine, COUNT(*) AS restaurant_count FROM restaurants GROUP BY cuisine ORDER BY restaurant_count DESC, cuisine;",
+    "columns": [
+      "cuisine",
+      "restaurant_count"
+    ],
+    "rows": [
+      [
+        "Italian",
+        2
+      ],
+      [
+        "Mexican",
+        2
+      ],
+      [
+        "American",
+        1
+      ],
+      [
+        "Japanese",
+        1
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Average meal cost",
+    "question": "Return cuisine and AVG(avg_cost) AS average_cost for each cuisine. Sort by cuisine alphabetically.",
+    "points": 4,
+    "sql": "SELECT cuisine, AVG(avg_cost) AS average_cost FROM restaurants GROUP BY cuisine ORDER BY cuisine;",
+    "columns": [
+      "cuisine",
+      "average_cost"
+    ],
+    "rows": [
+      [
+        "American",
+        14
+      ],
+      [
+        "Italian",
+        15
+      ],
+      [
+        "Japanese",
+        25
+      ],
+      [
+        "Mexican",
+        10.5
+      ]
+    ]
+  }
+]
